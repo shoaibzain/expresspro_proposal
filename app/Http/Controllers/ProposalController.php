@@ -37,12 +37,17 @@ class ProposalController extends Controller
      */
     public function store(Request $request)
     {
-        Validator::make($request->all(), [
-            'title' => ['required'],
-            'body' => ['required'],
-        ])->validate();
-   
-        Proposal::create($request->all());
+        $input = [
+            'title' => 'Demo Title',
+            'body' => 'Demo Title',
+            'data' => [
+                'ui' => 'One',
+                '2' => 'Two',
+                '3' => 'Three'
+            ]
+        ];
+  
+        $item = Proposal::create($input);
     
         return redirect()->route('proposals.index');
     }

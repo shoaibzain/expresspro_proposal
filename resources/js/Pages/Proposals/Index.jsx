@@ -11,6 +11,10 @@ export default function Index(props) {
             Inertia.delete(route("proposals.destroy", e.currentTarget.id));
         }
     }
+    console.log(proposals, 'proposals')
+    console.log(proposals[1]?.data, 'proposals-data')
+    const data = [proposals[1]?.data]
+    console.log(data, '1-1')
     return (
         <AuthenticatedLayout
             auth={props.auth}
@@ -20,6 +24,7 @@ export default function Index(props) {
             <Head title="Universal Proposal" />
             <div className="container mx-auto px-4 sm:px-8">
                 <div className="py-8">
+                    {proposals.map((v) => (<h2 className="font-semibold text-xl text-gray-800 leading-tight">{v?.data?.ui}</h2>))}
                     <div className="my-2 flex sm:flex-row flex-col">
                         <div className="flex flex-row mb-1 sm:mb-0">
                             <div className="relative">
@@ -78,10 +83,11 @@ export default function Index(props) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {proposals.map(({ id, title, body }) => (
+
+                                    {/* {proposals.map(({ id, title, body,data }) => (
                                         <tr>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap">{id}</p>
+                                                <p className="text-gray-900 whitespace-no-wrap">{data}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p className="text-gray-900 whitespace-no-wrap">{title}</p>
@@ -127,7 +133,7 @@ export default function Index(props) {
                                                 </p>
                                             </td>
                                         </tr>
-                                    ))}
+                                    ))} */}
                                     {proposals.length === 0 && (
                                         <tr>
                                             <td
