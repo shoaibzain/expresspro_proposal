@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="shortcut icon" type="image/x-icon" sizes="24x16" href="{{ asset('images/expresspro-apple.png') }}">        
         <!-- Scripts -->
         @routes
         @viteReactRefresh

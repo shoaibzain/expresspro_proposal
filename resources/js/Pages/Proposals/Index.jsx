@@ -78,17 +78,17 @@ export default function Index(props) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {proposals.map(({ id, title, body }) => (
+                                    {proposals.map(({ id, package_prepared, package_description, package_date }) => (
                                         <tr>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p className="text-gray-900 whitespace-no-wrap">{id}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                                <p className="text-gray-900 whitespace-no-wrap">{title}</p>
+                                                <p className="text-gray-900 whitespace-no-wrap">{package_prepared}</p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p className="text-gray-900 whitespace-no-wrap">
-                                                {body}
+                                                {package_description}
                                                 </p>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -96,7 +96,7 @@ export default function Index(props) {
                                                     className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                                     <span aria-hidden
                                                         className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                                    <span className="relative">{title}</span>
+                                                    <span className="relative">{package_date}</span>
                                                 </span>
                                             </td>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">

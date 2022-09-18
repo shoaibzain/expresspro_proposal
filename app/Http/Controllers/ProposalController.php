@@ -38,8 +38,14 @@ class ProposalController extends Controller
     public function store(Request $request)
     {
         Validator::make($request->all(), [
-            'title' => ['required'],
-            'body' => ['required'],
+            'package_authen' => ['required'],
+            'package_prepared' => ['required'],
+            'package_description' => ['required'],
+            'package_jurisdiction' => ['required'],
+            'package_full_details' => ['required'],
+            'package_remark' => ['required'],
+            'package_name' => ['required'],
+            'package_date' => ['required'],
         ])->validate();
    
         Proposal::create($request->all());
@@ -65,10 +71,16 @@ class ProposalController extends Controller
      * @return Response
      */
     public function update($id, Request $request)
-    {
+    { 
         Validator::make($request->all(), [
-            'title' => ['required'],
-            'body' => ['required'],
+            'package_authen' => ['required'],
+            'package_prepared' => ['required'],
+            'package_description' => ['required'],
+            'package_jurisdiction' => ['required'],
+            'package_full_details' => ['required'],
+            'package_remark' => ['required'],
+            'package_name' => ['required'],
+            'package_date' => ['required'],
         ])->validate();
     
         Proposal::find($id)->update($request->all());

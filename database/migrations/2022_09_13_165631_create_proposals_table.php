@@ -10,13 +10,19 @@ return new class extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('body');
+            $table->integer('package_authen');
+            $table->string('package_prepared');
+            $table->longText('package_description');
+            $table->text('package_jurisdiction');
+            $table->text('package_full_details');
+            $table->longText('package_remark');
+            $table->string('package_name', 50);
+            $table->date('package_date');
             $table->timestamps();
         });
     }

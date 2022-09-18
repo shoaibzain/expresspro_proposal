@@ -10,6 +10,13 @@ class Proposal extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'body'
+        'package_authen', 
+        'package_prepared', 
+        'package_description', 
+        'package_jurisdiction', 
+        'package_full_details', 
+        'package_remark', 
+        'package_name', 
+        'package_date'
     ];
 }
